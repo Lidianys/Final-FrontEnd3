@@ -1,15 +1,43 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
+export const GlobalContext = createContext();
 
-export const initialState = {theme: "", data: []}
+export const initialState = {
+  theme: "light",
+  dentists: [],
+  favs: JSON.parse(localStorage.getItem("favs")) || [],
+};
 
-export const ContextGlobal = createContext(undefined);
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "SET_THEME":
+      return { ...state, theme: action.payload };
+    case "SET_DENTISTS":
+      return { ...state, dentists: action.payload };
+    case "ADD_FAV":
+      if (state.favs.some((fav) => fav.id === action.payload.id)) {
+        return state;
+      }
+      const updatedFavs = [...state.favs, action.payload];
+      localStorage.setItem("favs", JSON.stringify(updatedFavs));
+      return { ...state, favs: updatedFavs };
+    case "REMOVE_FAV":
+      const filteredFavs = state.favs.filter(
+        (fav) => fav.id !== action.payload.id
+      );
+      localStorage.setItem("favs", JSON.stringify(filteredFavs));
+      return { ...state, favs: filteredFavs };
+    default:
+      return state;
+  }
+};
 
 export const ContextProvider = ({ children }) => {
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <ContextGlobal.Provider value={{}}>
+    <GlobalContext.Provider value={{ state, dispatch }}>
       {children}
-    </ContextGlobal.Provider>
+    </GlobalContext.Provider>
   );
 };
