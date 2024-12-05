@@ -67,3 +67,13 @@ nav .theme-toggle img {
   width: 24px;
   height: 24px;
 }
+
+nav.dark, nav.dark * {
+  background-color: #333333;
+  color: #fff;
+}
+
+nav.light, nav.light * {
+  background-color: #f5f5f5;
+  color: #333;
+}
