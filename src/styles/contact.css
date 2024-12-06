@@ -19,8 +19,14 @@
   margin-bottom: 20px;
 }
 
-.form-container.dark, .form-container.dark h2 {
+.form-container.dark,
+.form-container.dark h2 {
   background-color: #333333;
+  color: #fff;
+}
+
+.form-container.dark form {
+  background-color: #575757;
   color: #fff;
 }
 

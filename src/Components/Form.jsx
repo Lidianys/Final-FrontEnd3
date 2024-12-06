@@ -20,9 +20,10 @@ const Form = () => {
         setSuccess(null);
       } else {
         setSuccess(
-          `Gracias ${formData.name}, te contactaremos cuanto antes vía mail`
+          `Gracias ${formData.name}, te contactaremos cuando antes vía mail`
         );
         setError(null);
+        console.log(`Datos enviados por el formulario: \n\tNombre: ${formData.name}\n\tEmail: ${formData.email}`)
       }
     };
 
@@ -45,8 +46,8 @@ const Form = () => {
         required
       />
       <button type="submit">Enviar</button>
-      {error && <p>{error}</p>}
-      {success && <p>{success}</p>}
+      {error && <p className="error">{error}</p>}
+      {success && <p className="success">{success}</p>}
     </form>
   );
 };

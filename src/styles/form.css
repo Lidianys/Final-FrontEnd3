@@ -36,3 +36,13 @@ form button {
 form button:hover {
   background-color: #0056b3;
 }
+
+.error {
+  margin: 20px 0px;
+  color: crimson
+}
+
+.success {
+  margin: 20px 0px;
+  color: limegreen
+}
