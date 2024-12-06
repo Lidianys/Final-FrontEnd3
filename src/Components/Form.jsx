@@ -1,4 +1,5 @@
 import {useState} from "react";
+import '../styles/form.css';
 
 
 const Form = () => {
@@ -19,7 +20,7 @@ const Form = () => {
         setSuccess(null);
       } else {
         setSuccess(
-          `Gracias ${formData.name}, te contactaremos cuando antes vía mail`
+          `Gracias ${formData.name}, te contactaremos cuanto antes vía mail`
         );
         setError(null);
       }
