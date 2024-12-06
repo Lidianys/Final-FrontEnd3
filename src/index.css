@@ -1,19 +1,17 @@
 /* Variables globales */
 :root {
-  --bg-color: #ffffff; /* Fondo blanco */
-  --text-color: #333333; /* Texto en gris oscuro */
-  --primary-color: #0d6efd; /* Color principal (como los botones o enlaces activos) */
-  --secondary-color: #6c757d; /* Color secundario */
-  --hover-color: #0056b3; /* Color al pasar el mouse */
-  --light-bg: #f8f9fa; /* Fondo claro */
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Sombras */
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --light-bg: #f8f9fa;
+  --dark-bg: #676767;
+  --dark-text: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo general */
 body {
   margin: 0;
   padding: 0;
-  font-family: "Arial", sans-serif; /* Fuente base */
+  font-family: "Arial", sans-serif;
   background-color: var(--light-bg);
   color: var(--text-color);
   line-height: 1.6;
@@ -44,7 +42,6 @@ a:hover {
   color: var(--hover-color);
 }
 
-/* Estilo para botones */
 button {
   padding: 0.5rem 1rem;
   border: none;
@@ -60,7 +57,6 @@ button:hover {
   background-color: var(--hover-color);
 }
 
-/* Contenedores principales */
 .container {
   max-width: 1200px;
   margin: 0 auto;
